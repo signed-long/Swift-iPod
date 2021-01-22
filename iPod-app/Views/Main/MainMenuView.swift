@@ -13,6 +13,7 @@ import CoreData
 // A view with the main navigation menu of the app.
 struct MainMenuView: View {
     @EnvironmentObject var player: MyAudioPlayer
+    @Environment(\.colorScheme) var colorScheme
     @Environment(\.managedObjectContext) private var moc
     @State private var showImportMusicSheet: Bool = false
     @State private var showingNowPlayingSheet: Bool = false
@@ -35,77 +36,30 @@ struct MainMenuView: View {
                 NavigationView {
                     ScrollView {
                         VStack {
+
                             Group {
-                                NavigationLink(destination: AllSongsView(), tag: 1, selection: $action) {
-                                    EmptyView()
-                                }
-                                NavigationLink(destination: AllPlaylistsView(type: "playlist", moc: self.moc), tag: 2, selection: $action) {
-                                    EmptyView()
-                                }
-                                NavigationLink(destination: AllPlaylistsView(type: "album", moc: self.moc), tag: 3, selection: $action) {
-                                    EmptyView()
-                                }
-                                NavigationLink(destination: AllPlaylistsView(type: "artist", moc: self.moc), tag: 4, selection: $action) {
-                                    EmptyView()
-                                }
+                                MenuItem(action: $action,
+                                         tag: 1,
+                                         destination: AnyView(AllSongsView()),
+                                         systemName: "music.quarternote.3",
+                                         text: "All songs")
+                                MenuItem(action: $action,
+                                         tag: 2,
+                                         destination: AnyView(AllPlaylistsView(type: "playlist", moc: self.moc)),
+                                         systemName: "music.note.list",
+                                         text: "Playlists")
+                                MenuItem(action: $action,
+                                         tag: 3,
+                                         destination: AnyView(AllPlaylistsView(type: "album", moc: self.moc)),
+                                         systemName: "square.stack",
+                                         text: "Albums")
+                                MenuItem(action: $action,
+                                         tag: 4,
+                                         destination: AnyView(AllPlaylistsView(type: "artist", moc: self.moc)),
+                                         systemName: "music.mic",
+                                         text: "Artists")
                             }
-                            Group {
-                                Divider()
-                                Button(action: {self.action = 1}) {
-                                        HStack {
-                                            Image(systemName: "music.quarternote.3")
-                                            Text("All songs")
-                                                .font(.title2)
-                                                .padding(.horizontal, 2)
-                                            Spacer()
-                                        }
-                                        .foregroundColor(.white)
-                                        .padding(.leading, 12)
 
-                                }
-                                Divider()
-                                Button(action: {self.action = 2}) {
-                                        HStack {
-                                            Image(systemName: "music.note.list")
-                                            Text("Playlists")
-                                                .font(.title2)
-                                                .padding(.horizontal, 2)
-                                            Spacer()
-                                        }
-                                        .foregroundColor(.white)
-                                        .padding(.leading, 12)
-
-                                }
-                                Divider()
-                                Button(action: {self.action = 3}) {
-                                        HStack {
-                                            Image(systemName: "square.stack")
-
-                                            Text("Albums")
-                                                .font(.title2)
-                                                .padding(.horizontal, 2)
-                                            Spacer()
-                                        }
-                                        .foregroundColor(.white)
-                                        .padding(.leading, 12)
-
-                                }
-                                Divider()
-                                Button(action: {self.action = 4}) {
-                                        HStack {
-                                            Image(systemName: "music.mic")
-                                            Text("Artists")
-                                                .font(.title2)
-                                                .padding(.horizontal, 2)
-                                            Spacer()
-                                        }
-                                        .foregroundColor(.white)
-                                        .padding(.leading, 12)
-
-                                    }
-                                Divider()
-                            }
-            
                             LazyVGrid(columns: layout) {
                                 ForEach(playlists, id: \.id) { playlist in
                                     NavigationLink(destination: PlaylistView(playlist: playlist, type: playlist.type ?? "playlist")) {

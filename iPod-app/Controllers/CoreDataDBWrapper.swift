@@ -164,7 +164,6 @@ class CoreDataDBWrapper {
             } else {
                 addSongToCollections(song: sameSongs[0] as! Song)
             }
-                
         }
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A32E712925BAB19800E55D87 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32E712825BAB19800E55D87 /* MenuItem.swift */; };
 		A351F8AC25B0F781005791F3 /* iPod_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A351F8AB25B0F781005791F3 /* iPod_appApp.swift */; };
 		A351F8AE25B0F781005791F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A351F8AD25B0F781005791F3 /* ContentView.swift */; };
 		A351F8B025B0F782005791F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A351F8AF25B0F782005791F3 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A32E712825BAB19800E55D87 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		A351F8A825B0F781005791F3 /* iPod-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPod-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A351F8AB25B0F781005791F3 /* iPod_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPod_appApp.swift; sourceTree = "<group>"; };
 		A351F8AD25B0F781005791F3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				A351F8ED25B0F992005791F3 /* MarqueeText.swift */,
+				A32E712825BAB19800E55D87 /* MenuItem.swift */,
 				A351F8E125B0F942005791F3 /* SongCellView.swift */,
 				A351F8E425B0F951005791F3 /* PlaylistCellView.swift */,
 				A351F8CF25B0F8B8005791F3 /* AddMusicOptionCard.swift */,
@@ -290,6 +293,7 @@
 				A351F8AE25B0F781005791F3 /* ContentView.swift in Sources */,
 				A351F8CB25B0F848005791F3 /* ImportAsMixtapeView.swift in Sources */,
 				A351F8F625B0FA5C005791F3 /* CoreDataDBWrapper.swift in Sources */,
+				A32E712925BAB19800E55D87 /* MenuItem.swift in Sources */,
 				A351F90325B0FBEA005791F3 /* Song+CoreDataProperties.swift in Sources */,
 				A351F8AC25B0F781005791F3 /* iPod_appApp.swift in Sources */,
 				A351F8DC25B0F915005791F3 /* AllSongsView.swift in Sources */,
@@ -425,6 +429,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iPod-app/Preview Content\"";
+				DEVELOPMENT_TEAM = G3UB9LZR64;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "iPod-app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -446,6 +451,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iPod-app/Preview Content\"";
+				DEVELOPMENT_TEAM = G3UB9LZR64;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "iPod-app/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

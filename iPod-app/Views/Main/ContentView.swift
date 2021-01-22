@@ -15,6 +15,7 @@ struct ContentView: View {
     
     var body: some View {
         MainMenuView()
+//            .onAppear(perform: {dropDB(moc: moc)})
     }
 }
 

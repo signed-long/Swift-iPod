@@ -78,7 +78,7 @@ class MyAudioPlayer: ObservableObject {
     //
     // Skips to the next song.
     public func skipToNext() {
-        if currentUrlIndex != -1 && currentUrlIndex != songUrlArray.count - 1{
+        if currentUrlIndex != -1 && currentUrlIndex != songUrlArray.count - 1 {
             updatePlayerItemArray(forward: true)
             if checkSongUrlIsReachable(url: songUrlArray[currentUrlIndex].wrappedAudioUrl) {
                 if playerItemArray[currentPlayerItemIndex] != player.currentItem {
